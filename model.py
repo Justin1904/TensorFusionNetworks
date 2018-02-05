@@ -115,7 +115,7 @@ class TFN(nn.Module):
         self.text_subnet = TextSubNet(self.text_in, self.text_hidden, self.text_out, dropout=self.text_prob)
 
         # define the post_fusion layers
-        self.post_fusion_dropout = nn.Dropout(p=self.post_fusion_dropout)
+        self.post_fusion_dropout = nn.Dropout(p=self.post_fusion_prob)
         self.post_fusion_layer_1 = nn.Linear((self.text_out + 1) * (self.video_hidden + 1) * (self.audio_hidden + 1), self.post_fusion_dim)
         self.post_fusion_layer_2 = nn.Linear(self.post_fusion_dim, self.post_fusion_dim)
         self.post_fusion_layer_3 = nn.Linear(self.post_fusion_dim, 1)

@@ -12,11 +12,17 @@ Here's a list of commandline arguments for `train.py`:
 
 ```
 --dataset: default is 'MOSI', currently don't really support other datasets. Just ignore this option
+
 --epochs: max number of epochs, default is 50
+
 --batch_size: batch size, default is 32
+
 --patience: specifies the early stopping condition, similar to that in Keras, default 20
+
 --cuda: whether or not to use GPU, default False
+
 --model_path: a string that specifies the location for storing trained models, default='models'
+
 --max_len: max sequence length when preprocessing data, default=20
 ```
 

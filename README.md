@@ -1,5 +1,5 @@
 # Tensor Fusion Networks
-This is a PyTorch implementation of 
+This is a PyTorch implementation of:
 
 `Zadeh, Amir, et al. "Tensor fusion network for multimodal sentiment analysis." EMNLP 2017 Oral.`
 

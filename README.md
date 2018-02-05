@@ -32,4 +32,4 @@ In a nutshell, you can train the model using the following command:
 python train.py --epochs 100 --patience 10
 ```
 
-The script starts with a randomly selected set of hyper-parameters, which sucks. If you want to tune it, you can change them yourself.
+The script starts with a randomly selected set of hyper-parameters, which sucks. If you want to tune it, you can change them yourself in the script.

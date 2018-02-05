@@ -29,5 +29,5 @@ Here's a list of commandline arguments for `train.py`:
 In a nutshell, you can train the model using the following command:
 
 ```
-CUDA_VISIBLE_DEVICES=0 python train.py --epochs 100 --patience 10
+python train.py --epochs 100 --patience 10
 ```

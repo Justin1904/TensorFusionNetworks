@@ -85,7 +85,7 @@ def main(options):
         DTYPE = torch.cuda.FloatTensor
     print("Model initialized")
     criterion = nn.L1Loss(size_average=False)
-    optimizer = optim.Adam(model.parameters())
+    optimizer = optim.Adam(list(model.parameters())[2:]) # don't optimize the first 2 params, they should be fixed (output_range and shift)
     
     # setup training
     complete = True

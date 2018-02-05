@@ -79,7 +79,7 @@ def main(options):
     DTYPE = torch.FloatTensor
     train_set, valid_set, test_set, input_dims = preprocess(options)
 
-    model = TFN(input_dims, (32, 32, 128), 64, 0.3, 32)
+    model = TFN(input_dims, (32, 32, 128), 64, (0.3, 0.3, 0.3, 0.3), 32)
     if options['cuda']:
         model = model.cuda()
         DTYPE = torch.cuda.FloatTensor

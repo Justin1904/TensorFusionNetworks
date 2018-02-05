@@ -138,7 +138,7 @@ class TFN(nn.Module):
         batch_size = audio_h.data.shape[0]
 
         # next we perform "tensor fusion", which is essentially appending 1s to the tensors and take Kronecker product
-        if audio_h.is_cuda():
+        if audio_h.is_cuda:
             DTYPE = torch.cuda.FloatTensor
         else:
             DTYPE = torch.FloatTensor

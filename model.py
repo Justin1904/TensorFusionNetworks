@@ -69,7 +69,7 @@ class TextSubNet(nn.Module):
             x: tensor of shape (batch_size, sequence_len, in_size)
         '''
         _, final_states = self.rnn(x)
-        h = self.dropout(final_states[0])
+        h = self.dropout(final_states[0].squeeze())
         y_1 = self.linear_1(h)
         return y_1
 
@@ -156,7 +156,7 @@ class TFN(nn.Module):
         # next we do kronecker product between fusion_tensor and _text_h. This is even trickier
         # we have to reshape the fusion tensor during the computation
         # in the end we don't keep the 3-D tensor, instead we flatten it
-        fusion_tensor = fusion_tensor.view(-1, self.audio_in + 1 * self.video_in + 1, 1)
+        fusion_tensor = fusion_tensor.view(-1, (self.audio_hidden + 1) * (self.video_hidden + 1), 1)
         fusion_tensor = torch.bmm(fusion_tensor, _text_h.unsqueeze(1)).view(batch_size, -1)
 
         post_fusion_dropped = self.post_fusion_dropout(fusion_tensor)

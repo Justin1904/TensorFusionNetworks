@@ -4,7 +4,7 @@ This is a PyTorch implementation of:
 Zadeh, Amir, et al. "Tensor fusion network for multimodal sentiment analysis." EMNLP 2017 Oral.
 
 It requires PyTorch and the CMU Multimodal Data SDK (https://github.com/A2Zadeh/CMU-MultimodalDataSDK) 
-to function properly. The data will be automatically downloaded if you run the script for the first time.
+to function properly. The training data (CMU-MOSI dataset) will be automatically downloaded if you run the script for the first time.
 
 The model is defined in `model.py`, and the training script is `train.py`.
 Here's a list of commandline arguments for `train.py`:

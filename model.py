@@ -160,9 +160,9 @@ class TFN(nn.Module):
         fusion_tensor = torch.bmm(fusion_tensor, _text_h.unsqueeze(1)).view(batch_size, -1)
 
         post_fusion_dropped = self.post_fusion_dropout(fusion_tensor)
-        post_fusion_y_1 = self.post_fusion_layer_1(post_fusion_dropped)
-        post_fusion_y_2 = self.post_fusion_layer_2(post_fusion_y_1)
-        post_fusion_y_3 = self.post_fusion_layer_3(post_fusion_y_2)
+        post_fusion_y_1 = F.relu(self.post_fusion_layer_1(post_fusion_dropped))
+        post_fusion_y_2 = F.relu(self.post_fusion_layer_2(post_fusion_y_1))
+        post_fusion_y_3 = F.sigmoid(self.post_fusion_layer_3(post_fusion_y_2))
         output = post_fusion_y_3 * self.output_range + self.output_shift
 
         return output

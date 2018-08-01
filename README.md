@@ -1,4 +1,9 @@
+## IMPORTANT NOTICE
+
+The CMU-MultimodalSDK on which this repo depend on is recently undergoing major updates and its API as well as data structures have substantially changed. Hence the code in this repo is currently not ready for running experiments directly. We will update the code once the changes on the MultimodalSDK side have finalized. In the meantime, the code for the model itself is still up-to-date, so if you want to use the model by writing your own data preprocessing code, please feel free to do so.
+
 # Tensor Fusion Networks
+
 This is a PyTorch implementation of:
 
 Zadeh, Amir, et al. "Tensor fusion network for multimodal sentiment analysis." EMNLP 2017 Oral.

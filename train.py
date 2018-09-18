@@ -170,7 +170,7 @@ def main(options):
             x_v = Variable(x[1].float().type(DTYPE), requires_grad=False).squeeze()
             x_t = Variable(x[2].float().type(DTYPE), requires_grad=False)
             y = Variable(batch[-1].view(-1, 1).float().type(DTYPE), requires_grad=False)
-            output_test = model(x_a, x_v, x_t)
+            output_test = best_model(x_a, x_v, x_t)
             loss_test = criterion(output_test, y)
             test_loss = loss_test.data[0]
         output_test = output_test.cpu().data.numpy().reshape(-1)
